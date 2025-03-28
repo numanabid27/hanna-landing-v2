@@ -56,7 +56,7 @@ export default function useFooter() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+        
         let errors = { ...formErrors };
         let hasError = false;
     
@@ -76,7 +76,7 @@ export default function useFooter() {
     
         // Update the formErrors state
         setFormErrors(errors);
-    
+        setIsLaoding(true);
         // If there are any errors, stop execution
         if (hasError) {
             setIsLaoding(false);

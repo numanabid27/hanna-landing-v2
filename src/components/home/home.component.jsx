@@ -15,6 +15,11 @@ import insurance2 from "@/common/assets/images/insurance-2.png"
 import insurance3 from "@/common/assets/images/insurance-3.png"
 import insurance4 from "@/common/assets/images/insurance-4.png"
 import CalendlyEmbed from "@/common/components/calendly/calendly.component";
+import { useRouter } from "next/navigation";
+import tick from "@/common/assets/images/tick.svg";
+import hand from "@/common/assets/images/hand.svg"
+import light from "@/common/assets/images/light.svg"
+import calender from "@/common/assets/images/r-calender.svg"
 
 export default function HomeComponent() {
   const accordionData = {
@@ -31,35 +36,35 @@ export default function HomeComponent() {
               "Help employees prevent and manage pain through a brief physical assessment, personalized exercises, and follow-up support.",
             features: [
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "30-minute assessments",
                 description: "To evaluate pain and movement restrictions",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Pre-screening questionnaire",
                 description: "Before the visit to understand each employee's needs",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Personalized home exercise program",
                 description: "Appropriate referral after the screening",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Follow-ups at 1, 2, and 4 weeks",
                 description: "Track progress and adjust treatment if needed",
               },
               {
-                icon: "👋",
+                icon: hand,
                 iconBg: "#fdc794",
                 iconColor: "#f9a671",
                 title:
@@ -70,6 +75,7 @@ export default function HomeComponent() {
             ],
             image: onsite,
             buttonText: "Schedule a Screening",
+            buttonUrl:"screening"
           },
         },
         {
@@ -80,35 +86,35 @@ export default function HomeComponent() {
               "One-hour engaging, interactive in-person workshops with Q&A to empower employees to take control of their health.",
             features: [
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Back Pain",
                 description: "Self-Treatment & Prevention Strategies",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Neck Pain",
                 description: "Self-Treatment & Prevention Strategies",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Ergonomics & Body Mechanics",
                 description: "Ergonomics & Body Mechanics for Holistic Well-being",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Move Well, Age Well",
                 description: "Healthy movement habits for longevity",
               },
               {
-                icon: "👋",
+                icon: light,
                 iconBg: "#fdc794",
                 iconColor: "#f9a671",
                 title:
@@ -119,6 +125,7 @@ export default function HomeComponent() {
             ],
             image: wellnes,
             buttonText: "Book a Workshop",
+            buttonUrl:"workshop"
           },
         },
         {
@@ -130,37 +137,37 @@ export default function HomeComponent() {
               "A powerful resource for companies looking to provide ongoing health support to employees.",
             features: [
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 description: "Personalized video-guided movement plans",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 description: "Mobility & stretching classes",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 description: "Pilates & HIIT workouts",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 description: "Pain neuroscience education",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 description: "Ergonomics & movement techniques",
               },
               {
-                icon: "👋",
+                icon: calender,
                 iconBg: "#fdc794",
                 iconColor: "#f9a671",
                 title:
@@ -171,6 +178,7 @@ export default function HomeComponent() {
             ],
             image: workshop,
             buttonText: "Join the Waitlist",
+            buttonUrl:"waitlist"
           },
         },
       ]
@@ -188,28 +196,28 @@ export default function HomeComponent() {
               "Physiotherapy helps restore movement, reduce pain, and prevent future injuries. Whether you're recovering from an injury or dealing with chronic pain, our approach is tailored to your needs.",
             features: [
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Pain relief",
                 description: "Pain relief without medication",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Recover faster",
                 description: "Recover faster from injuries or surgery",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Improve",
                 description: "Improve mobility & flexibility",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Prevent",
@@ -229,42 +237,42 @@ export default function HomeComponent() {
               "We specialize in orthopedic and musculoskeletal conditions, including.",
             features: [
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Neck & Back Pain",
                 description: "(Herniated discs, sciatica, muscle strain)",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Shoulder Pain",
                 description: "(Rotator cuff injuries, frozen shoulder)",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Elbow & Wrist Pain",
                 description: "(Tennis elbow, carpal tunnel)",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Hip & Knee Pain",
                 description: "(Arthritis, meniscus injuries, post-surgery rehab)",
               },
               {
-                icon: "✓",
+                icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Ankle & Foot Pain",
                 description: "(Sprains, plantar fasciitis, Achilles tendon issues)",
               },
               {
-                icon: "👋",
+                icon: calender,
                 iconBg: "#fdc794",
                 iconColor: "#f9a671",
                 title:
@@ -285,7 +293,8 @@ export default function HomeComponent() {
 
   const [openAccordion, setOpenAccordion] = useState(1);
   const [toggle, setToggle] = useState("Companies");
-  const [data, setData] = useState(null)
+  const [data, setData] = useState(null);
+  const router = useRouter();
   const toggleAccordion = (id) => {
     setOpenAccordion(openAccordion === id ? 0 : id);
   };
@@ -359,17 +368,18 @@ export default function HomeComponent() {
                         <div key={index} className="flex gap-3">
                           <div
                             className={`h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0`}
-                            style={{ backgroundColor: feature.iconBg }}
+                            
                           >
-                            <span style={{ color: feature.iconColor }}>
+                            {/* <span style={{ color: feature.iconColor }}>
                               {feature.icon}
-                            </span>
+                            </span> */}
+                            {feature.icon && <Image src={feature.icon} alt="Feature icon" width={20} height={20} /> }
                           </div>
                           <div>
                             <p
                               className={
                                 feature.highlight
-                                  ? `text-[${feature.iconColor}]`
+                                  ? `text-[#FD707B]`
                                   : "font-medium text-[#001225]"
                               }
                             >
@@ -385,7 +395,11 @@ export default function HomeComponent() {
                       ))}
 
                       {accordion.content.buttonText && (
-                        <button type="button" className="cursor-pointer mt-4 px-6 py-2 border border-(--primary) text-(--primary) rounded-full hover:bg-[#f9fcfb] transition-colors">
+                        <button 
+                          onClick={()=>router.push(`book-demo?role=employer&service=${accordion.content.buttonUrl}`)}
+                          type="button" 
+                          className="cursor-pointer mt-4 px-6 py-2 border border-(--primary) text-(--primary) rounded-full hover:bg-[#f9fcfb] transition-colors"
+                        >
                           {accordion.content.buttonText}
                         </button>
                       )}

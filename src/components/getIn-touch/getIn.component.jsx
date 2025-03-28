@@ -6,6 +6,8 @@ import contactImg from "@/common/assets/images/contact.jpg";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
+import spinner from "@/common/assets/images/loading.svg"
+import Link from "next/link";
 
 export default function GetIn() {
   const [toggle, setToggle] = useState("patient");
@@ -13,12 +15,14 @@ export default function GetIn() {
   const [isError, setIsError] = useState(false);
   const params = useSearchParams();
   const getParams = params.get("role");
+  const getService = params.get("service");
   const router = useRouter();
   const [initialValues, setInitialValues] = useState({
     fullName: "",
     phoneNo: "",
     email: "",
     condition: "",
+    service:"",
     otherCondition: "",
     previousTreatment: false,
     insuranceProvider: "",
@@ -58,9 +62,10 @@ export default function GetIn() {
     const { name, value } = e.target;
     setInitialValues({ ...initialValues, [name]: value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(toggle === "employer"){
+    if(getParams === "employer" || getService){
         if(!initialValues.fullName || 
             !initialValues.email || 
             !initialValues.service 
@@ -122,6 +127,22 @@ export default function GetIn() {
     }
   }, [getParams, router]);
 
+  useEffect(() => {
+    if (getService) {
+      setInitialValues((prevValues) => ({
+        ...prevValues,
+        service:
+          getService === "waitlist"
+            ? "Join the Wellness Platform Waitlist"
+            : getService === "screening"
+            ? "Schedule a Screening"
+            : getService === "workshop"
+            ? "Book a Workshop"
+            : "",
+      }));
+    }
+  }, [getService]);
+
   return (
     <main className="flex-grow container mx-auto px-4 py-8 ">
       <div className="grid md:grid-cols-2 gap-8 pt-[80px]">
@@ -140,11 +161,11 @@ export default function GetIn() {
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-2">
                 <div>
                   <p className="text-sm font-medium">Email Us At:</p>
-                  <p className="text-sm">admin@hannahealthhub.com</p>
+                  <Link href="mailto:admin@hannahealthhub.com" className="text-sm">admin@hannahealthhub.com</Link>
                 </div>
                 <div>
                   <p className="text-sm font-medium">Contact Us:</p>
-                  <p className="text-sm">(441) 732-7030</p>
+                  <Link href="tel:(441) 732-7030" className="text-sm">(441) 732-7030</Link>
                 </div>
               </div>
             </div>
@@ -382,7 +403,7 @@ export default function GetIn() {
                       disabled={isLoading}
                     className="w-full py-3 bg-[#036e49] mt-5 disabled:opacity-50 disabled:cursor-not-allowed rounded-[24px] cursor-pointer text-white font-medium hover:bg-[#025a3c] transition-colors"
                     >
-                        {isLoading ? "Submitting...." : "Submit Inquiry"}
+                        {isLoading ? <span className="flex gap-2 justify-center"><Image src={spinner} width={24} height={24} alt="" /> Submit Inquiry</span> : "Submit Inquiry"}
                     </button>
                 </>
               ) : (
@@ -560,7 +581,7 @@ export default function GetIn() {
                                     onChange={handleChange}
                                     name="noOfParticipants"
                                     value={initialValues.noOfParticipants}
-                                    placeholder="Enter numberof participants "
+                                    placeholder="Enter number of participants"
                                     className="w-full text-sm p-[13px] outline-0 border border-[#d9dadf] rounded-[12px]"
                                 />
                                 </div>  
@@ -578,7 +599,7 @@ export default function GetIn() {
                                     onChange={handleChange}
                                     name="customRequests"
                                     value={initialValues.customRequests}
-                                    placeholder="Enter numberof participants "
+                                    placeholder="Write here.."
                                     className="w-full text-sm p-[13px] outline-0 border border-[#d9dadf] rounded-[12px]"
                                 />
                                 
@@ -689,7 +710,7 @@ export default function GetIn() {
                                     name="description"
                                     value={initialValues.description}
                                     rows={4}
-                                    placeholder="Describe what you're experiencing so we can help..."
+                                    placeholder="Write here.."
                                     className="w-full p-[13px] outline-0 border border-[#d9dadf] rounded-[12px]"
                                 ></textarea>
                             </div>
@@ -700,8 +721,16 @@ export default function GetIn() {
                             disabled={isLoading}
                             className="w-full py-3 bg-[#036e49] mt-5 disabled:opacity-50 disabled:cursor-not-allowed rounded-[24px] cursor-pointer text-white font-medium hover:bg-[#025a3c] transition-colors"
                         >
-                            {isLoading ? "Submitting...." : "Submit Inquiry"}
+                            {isLoading ? <span className="flex gap-2 justify-center"><Image src={spinner} width={24} height={24} alt="" /> Submit Inquiry</span> : 
+                              `${initialValues.service === "Book a Workshop" ? "Book a Workshop" : 
+                                initialValues.service === "Schedule a Screening" ? "Schedule a Screening" : 
+                                initialValues.service === "Join the Wellness Platform Waitlist" ? "Join the Wellness Platform Waitlist" : 
+                                "Submit Inquiry"
+                              }`
+                            }
                         </button>
+
+                        
                         
                     </>
                 )

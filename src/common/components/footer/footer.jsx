@@ -31,31 +31,31 @@ export default function Footer() {
                         <Link href="/" className="hover:text-[#036e49]">
                         Home
                         </Link>
-                        <Link href="/employers" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Employers
                         </Link>
-                        <Link href="/health-plans" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Health Plans
                         </Link>
-                        <Link href="/providers" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Providers
                         </Link>
-                        <Link href="/individuals" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Individuals
                         </Link>
-                        <Link href="/resources" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Resources
                         </Link>
-                        <Link href="/about" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         About
                         </Link>
-                        <Link href="/contact" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Contact
                         </Link>
-                        <Link href="/privacy" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Privacy
                         </Link>
-                        <Link href="/terms" className="hover:text-[#036e49]">
+                        <Link href="#" className="hover:text-[#036e49]">
                         Terms
                         </Link>
                     </div>
@@ -157,16 +157,16 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-6 border-t border-[#e9e9e9]">
                     <p className="text-sm text-[#5d606d] mb-4 md:mb-0">© 2024 Hana Health. All rights reserved.</p>
                     <div className="flex gap-4">
-                    <Link href="#" className="text-[#FD707B] hover:text-[#fd707b]">
+                    <Link href="https://www.instagram.com/HANNAHEALTHHUB/" target="_blank" className="text-[#FD707B] hover:text-[#fd707b]">
                         <FaInstagram className="h-5 w-5" />
                     </Link>
-                    <Link href="#" className="text-[#FD707B] hover:text-[#0077b5]">
+                    <Link href="https://www.linkedin.com/company/66651996/admin/dashboard/" target="_blank" className="text-[#FD707B] hover:text-[#0077b5]">
                         <FaLinkedin className="h-5 w-5" />
                     </Link>
-                    <Link href="#" className="text-[#FD707B] hover:text-[#ff0000]">
+                    <Link href="https://www.youtube.com/@HannaHealth" target="_blank" className="text-[#FD707B] hover:text-[#ff0000]">
                         <FaYoutube className="h-5 w-5" />
                     </Link>
-                    <Link href="#" className="text-[#FD707B] hover:text-[#1877f2]">
+                    <Link href="https://www.facebook.com/hannahealthub/" target="_blank" className="text-[#FD707B] hover:text-[#1877f2]">
                         <FaFacebook className="h-5 w-5" />
                     </Link>
                     </div>
