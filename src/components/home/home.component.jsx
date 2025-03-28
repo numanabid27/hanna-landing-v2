@@ -20,6 +20,7 @@ import tick from "@/common/assets/images/tick.svg";
 import hand from "@/common/assets/images/hand.svg"
 import light from "@/common/assets/images/light.svg"
 import calender from "@/common/assets/images/r-calender.svg"
+import Link from "next/link";
 
 export default function HomeComponent() {
   const accordionData = {
@@ -75,7 +76,7 @@ export default function HomeComponent() {
             ],
             image: onsite,
             buttonText: "Schedule a Screening",
-            buttonUrl:"screening"
+            buttonUrl:"?role=employer&service=screening"
           },
         },
         {
@@ -123,9 +124,9 @@ export default function HomeComponent() {
                 highlight: true,
               },
             ],
-            image: wellnes,
+            image: workshop,
             buttonText: "Book a Workshop",
-            buttonUrl:"workshop"
+            buttonUrl:"?role=employer&service=workshop"
           },
         },
         {
@@ -135,7 +136,8 @@ export default function HomeComponent() {
           content: {
             description:
               "A powerful resource for companies looking to provide ongoing health support to employees.",
-            features: [
+            subTitle:"400+ videos | 55+ classes | Personalized programs",
+              features: [
               {
                 icon: tick,
                 iconBg: "#fff1f2",
@@ -176,9 +178,9 @@ export default function HomeComponent() {
                 highlight: true,
               },
             ],
-            image: workshop,
+            image: wellnes,
             buttonText: "Join the Waitlist",
-            buttonUrl:"waitlist"
+            buttonUrl:"?role=employer&service=waitlist"
           },
         },
       ]
@@ -227,6 +229,8 @@ export default function HomeComponent() {
             ],
             image: patien1,
             buttonText: "Schedule a Virtual Visit",
+            buttonUrl:"?role=patient"
+
           },
         },
         {
@@ -234,55 +238,56 @@ export default function HomeComponent() {
           title: "Conditions We Treat",
           content: {
             description:
-              "We specialize in orthopedic and musculoskeletal conditions, including.",
+              "We specialize in orthopedic and musculoskeletal conditions, including:",
             features: [
               {
                 icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Neck & Back Pain",
-                description: "(Herniated discs, sciatica, muscle strain)",
+                description: "(Herniated discs, sciatica, muscle strain...)",
               },
               {
                 icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Shoulder Pain",
-                description: "(Rotator cuff injuries, frozen shoulder)",
+                description: "(Rotator cuff injuries, frozen shoulder...)",
               },
               {
                 icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Elbow & Wrist Pain",
-                description: "(Tennis elbow, carpal tunnel)",
+                description: "(Tennis elbow, carpal tunnel...)",
               },
               {
                 icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Hip & Knee Pain",
-                description: "(Arthritis, meniscus injuries, post-surgery rehab)",
+                description: "(Arthritis, meniscus injuries, post-surgery rehab...)",
               },
               {
                 icon: tick,
                 iconBg: "#fff1f2",
                 iconColor: "#fd707b",
                 title: "Ankle & Foot Pain",
-                description: "(Sprains, plantar fasciitis, Achilles tendon issues)",
+                description: "(Sprains, plantar fasciitis, Achilles tendon issues...)",
               },
               {
                 icon: calender,
                 iconBg: "#fdc794",
                 iconColor: "#f9a671",
-                title:
-                  "Not sure if physiotherapy is right for you? Book a consultation and let's discuss your needs.",
+                // title:
+                //   "Not sure if physiotherapy is right for you? Book a consultation and let's discuss your needs.",
                 description: "",
-                highlight: true,
+                heighLight: true
               },
             ],
             image: patien2,
             buttonText: "Schedule a Virtual Visit",
+             buttonUrl:"?role=patient"
           },
         },
         
@@ -357,9 +362,16 @@ export default function HomeComponent() {
 
             {openAccordion === accordion.id && (
               <div className="p-6 pt-0">
-                <p className="text-[#5d606d] sm:text-base text-sm mb-6">
+                <p className="text-[#5d606d] sm:text-base text-sm mb-2">
                   {accordion.content.description}
                 </p>
+                {
+                  accordion.content.subTitle &&
+                  <p className="text-[#5d606d] sm:text-base text-sm mb-6">
+                    {accordion.content.subTitle}
+                  </p>
+                }
+               
 
                 {accordion.content.features.length > 0 && (
                   <div className="flex flex-col md:flex-row gap-8">
@@ -382,7 +394,10 @@ export default function HomeComponent() {
                                   ? `text-[#FD707B]`
                                   : "font-medium text-[#001225]"
                               }
-                            >
+                            > 
+                              {feature.heighLight && 
+                                <span className="!text-[#373940] !font-normal">Not sure if physiotherapy is right for you? <Link href="/book-demo?role=patient" className="text-[#FD707B] underline font-semibold">Book a consultation</Link> <br/> and let's discuss your needs.</span>
+                              }
                               {feature.title}
                             </p>
                             {feature.description && (
@@ -396,7 +411,7 @@ export default function HomeComponent() {
 
                       {accordion.content.buttonText && (
                         <button 
-                          onClick={()=>router.push(`book-demo?role=employer&service=${accordion.content.buttonUrl}`)}
+                          onClick={()=>router.push(`book-demo${accordion.content.buttonUrl}`)}
                           type="button" 
                           className="cursor-pointer mt-4 px-6 py-2 border border-(--primary) text-(--primary) rounded-full hover:bg-[#f9fcfb] transition-colors"
                         >

@@ -28,15 +28,7 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex w-[60%] ml-auto items-center gap-3 justify-end">
-          <ul className="flex gap-3">
-            {list.map((item, i) => (
-              <li key={i.toString()}>
-                <Link href={item.url} className="text-gray-900 font-medium">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+         
           <div className="flex gap-3">
            
             <Button
@@ -70,19 +62,7 @@ export default function Header() {
           </button>
         </div>
 
-        <ul className="flex flex-col gap-6 mt-10 ps-5">
-          {list.map((item, i) => (
-            <li key={i.toString()}>
-              <Link
-                href={item.url}
-                className="text-gray-900 font-medium text-xl"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        
 
         <div className="flex flex-col gap-3 mt-10 px-5 ">
          

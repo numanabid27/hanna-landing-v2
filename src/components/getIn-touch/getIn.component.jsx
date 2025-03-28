@@ -30,7 +30,6 @@ export default function GetIn() {
     companyName:"",
     workshopTopic:"",
     noOfParticipants:"",
-    customRequests:"",
     noOFEmployees:"",
     wellNessTopic:"",
     hearSource:""
@@ -49,7 +48,6 @@ export default function GetIn() {
       companyName: "",
       workshopTopic: "",
       noOfParticipants: "",
-      customRequests: "",
       noOFEmployees: "",
       wellNessTopic: "",
       hearSource: "",
@@ -157,7 +155,7 @@ export default function GetIn() {
               support your health journey, we're here to help.
             </p>
             <div className="mb-4">
-              <h3 className="font-semibold mb-2">Alternate Contact Options:</h3>
+              <h3 className="font-semibold mb-2">Alternative Contact Options:</h3>
               <div className="grid sm:grid-cols-2 grid-cols-1 gap-2">
                 <div>
                   <p className="text-sm font-medium">Email Us At:</p>
@@ -586,7 +584,7 @@ export default function GetIn() {
                                 />
                                 </div>  
 
-                                <div>
+                                {/* <div>
                                     <label
                                     htmlFor="customRequests"
                                     className="block text-sm font-medium text-[#414651] mb-1"
@@ -603,7 +601,7 @@ export default function GetIn() {
                                     className="w-full text-sm p-[13px] outline-0 border border-[#d9dadf] rounded-[12px]"
                                 />
                                 
-                                </div>      
+                                </div>       */}
                             </> 
                         }
                         {

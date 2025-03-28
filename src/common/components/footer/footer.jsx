@@ -27,38 +27,7 @@ export default function Footer() {
                         Hanna Health is all about proactive lifestyle management! Here you will find exercises and resources to
                         help you feel better, reduce pain and prevent injuries.
                     </p>
-                    <div className="flex flex-wrap gap-4 text-sm text-[#373940] font-medium">
-                        <Link href="/" className="hover:text-[#036e49]">
-                        Home
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Employers
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Health Plans
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Providers
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Individuals
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Resources
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        About
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Contact
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Privacy
-                        </Link>
-                        <Link href="#" className="hover:text-[#036e49]">
-                        Terms
-                        </Link>
-                    </div>
+                  
                     </div>
 
                     {/* Right Column - Contact Form */}
