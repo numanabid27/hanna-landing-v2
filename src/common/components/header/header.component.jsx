@@ -27,7 +27,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex w-[60%] ml-auto items-center gap-3 justify-end">
+        <div className="flex w-[60%] ml-auto items-center gap-3 justify-end">
          
           <div className="flex gap-3">
            
@@ -41,16 +41,16 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
+        {/* <button
           className="md:hidden text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile Menu (Full Screen Overlay) */}
-      <div
+      {/* <div
         className={`fixed top-0 left-0 w-full h-full bg-white z-50 shadow-lg transition-all duration-300 ease-in-out ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
@@ -73,7 +73,7 @@ export default function Header() {
               className="cursor-pointer w-fit px-[24px] whitespace-nowrap rounded-[24px] text-white"
             />
         </div>
-      </div>
+      </div> */}
     </header>
   );
 }
