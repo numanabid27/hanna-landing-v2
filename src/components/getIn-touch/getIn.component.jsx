@@ -571,7 +571,7 @@ export default function GetIn() {
                                     htmlFor="noOfParticipants"
                                     className="block text-sm font-medium text-[#414651] mb-1"
                                 >
-                                    No of participants
+                                    Number of participants
                                 
                                 </label>
                                 <input

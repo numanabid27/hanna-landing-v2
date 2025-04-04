@@ -396,7 +396,7 @@ export default function HomeComponent() {
                               }
                             > 
                               {feature.heighLight && 
-                                <span className="!text-[#373940] !font-normal">Not sure if physiotherapy is right for you? <Link href="/book-demo?role=patient" className="text-[#FD707B] underline font-semibold">Book a consultation</Link> <br/> and let's discuss your needs.</span>
+                                <span className="!text-[#FD707B] !font-normal">Not sure if physiotherapy is right for you? <Link href="/book-demo?role=patient" className=" underline font-semibold">Book a consultation</Link> <br/> and let's discuss your needs.</span>
                               }
                               {feature.title}
                             </p>
