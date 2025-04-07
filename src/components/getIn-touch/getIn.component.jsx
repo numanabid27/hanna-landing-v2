@@ -243,9 +243,13 @@ export default function GetIn() {
                         placeholder="Enter email"
                         className="w-full p-[13px] text-sm outline-0 border border-[#d9dadf] rounded-[12px]"
                       />
-                    {
-                        isError && initialValues.email === "" ? <span className="text-red-500 text-xs">Email is required</span> : null
-                    }
+                      {
+                        isError && (initialValues.email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(initialValues.email)) ? (
+                          <span className="text-red-500 text-xs">
+                            {initialValues.email === "" ? "Email is required" : "Invalid email format"}
+                          </span>
+                        ) : null
+                      }
                     </div>
                     <div>
                       <label
@@ -442,8 +446,13 @@ export default function GetIn() {
                             placeholder="Enter email"
                             className="w-full p-[13px] text-sm outline-0 border border-[#d9dadf] rounded-[12px]"
                             />
+                           
                             {
-                                isError && initialValues.email === "" ? <span className="text-red-500 text-xs">Email is required</span> : null
+                              isError && (initialValues.email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(initialValues.email)) ? (
+                                <span className="text-red-500 text-xs">
+                                  {initialValues.email === "" ? "Email is required" : "Invalid email format"}
+                                </span>
+                              ) : null
                             }
                         </div>
                         </div>
