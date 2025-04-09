@@ -32,8 +32,8 @@ export default function Header() {
           <div className="flex gap-3">
            
             <Button
-              text="Book a Demo"
-              onClick={()=>router.push('/book-demo')}
+              text="Contact Us"
+              onClick={()=>router.push('/contact-us')}
               isbg="#036E49"
               className="cursor-pointer w-fit px-[24px] whitespace-nowrap rounded-[24px] text-white"
             />

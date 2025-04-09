@@ -187,7 +187,7 @@ export default function GetIn() {
                 getParams === "patient"
                   ? "bg-[#e6f1ed] text-[#036e49]"
                   : "bg-white text-[#717680]"
-              } w-fit px-4 py-2  font-medium rounded-md`}
+              } w-fit px-4 py-2  font-medium rounded-md cursor-pointer`}
             >
               Patient
             </button>
@@ -197,7 +197,7 @@ export default function GetIn() {
                 getParams === "employer"
                   ? "bg-[#e6f1ed] text-[#036e49]"
                   : "bg-white text-[#717680]"
-              } w-fit px-4 py-2  font-medium rounded-md`}
+              } w-fit px-4 py-2  font-medium rounded-md cursor-pointer`}
             >
               Employer
             </button>
@@ -484,10 +484,11 @@ export default function GetIn() {
                             ))}
                             </select>
                             <FaChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#414651]" />
-                            {
+                           
+                        </div>
+                        {
                                 isError && initialValues.service === "" ? <span className="text-red-500 text-xs">Service is required</span> : null
                             }
-                        </div>
                         </div>
                         
                         
