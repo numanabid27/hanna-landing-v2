@@ -651,7 +651,7 @@ export default function GetIn() {
                                         onChange={handleChange}
                                         className="w-full p-[13px] text-sm outline-0 border border-[#d9dadf] rounded-[12px] appearance-none"
                                         >
-                                        <option value="">Select A WellNess Topic</option>
+                                        <option value="">Select A Wellness Topic</option>
                                         {[
                                             "Personalized Video-Guided Movement Plans",
                                             "Mobility & Stretching",

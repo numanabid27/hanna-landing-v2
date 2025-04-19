@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { ToastContainer, Zoom } from "react-toastify";
 import Header from '@/common/components/header/header.component';
 import Footer from '@/common/components/footer/footer';
+import CustomToast from '@/common/components/custom-toaster/custom-toaster';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta-sans',
@@ -85,19 +86,7 @@ export default function RootLayout ({
         <link rel='icon' href={favicon.src} />
       </Head>
       <body className={`${plusJakartaSans.variable} ${poppins.variable} ${inter.variable} ${roboto.variable} antialiased`}>
-        <ToastContainer
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          limit={1}
-          theme="dark"
-          transition={Zoom}
-        />
+        <CustomToast />
         <Header />
         <main className='sm:px-5 px-2 mx-auto max-w-[1323px]'>
           {children}

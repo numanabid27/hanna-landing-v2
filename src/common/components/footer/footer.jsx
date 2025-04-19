@@ -22,12 +22,18 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Left Column */}
                     <div>
-                    <Image src={logo} alt="Hanna Health" width={91} height={76} className="h-12 w-auto mb-4" />
-                    <p className="text-[#777B8B] max-w-md mb-6 sm:text-base text-sm">
-                        Hanna Health is all about proactive lifestyle management! Here you will find exercises and resources to
-                        help you feel better, reduce pain and prevent injuries.
-                    </p>
-                  
+                        <Image src={logo} alt="Hanna Health" width={91} height={76} className="h-12 w-auto mb-4" />
+                        <p className="text-[#777B8B] max-w-md mb-6 sm:text-base text-sm">
+                            Hanna Health is all about proactive lifestyle management! Here you will find exercises and resources to
+                            help you feel better, reduce pain and prevent injuries.
+                        </p>
+                        <div className='flex gap-3 flex-wrap text-[#777B8B]'>
+                            <Link href="/">Home</Link>
+                            <Link href="#">Employers</Link>
+                            <Link href="#">Patients</Link>
+                            <Link href="#">About Us</Link>
+                            <Link href="#">Contact Us</Link>
+                        </div>
                     </div>
 
                     {/* Right Column - Contact Form */}

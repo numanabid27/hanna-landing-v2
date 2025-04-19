@@ -362,7 +362,9 @@ export default function HomeComponent() {
 
             {openAccordion === accordion.id && (
               <div className="p-6 pt-0">
-                <p className="text-[#5d606d] sm:text-base text-sm mb-2">
+                <p className={`${
+                  accordion.content.description === "We specialize in orthopedic and musculoskeletal conditions, including:" && "!text-[#FD707B]"
+                } text-[#5d606d] sm:text-base text-sm mb-2`}>
                   {accordion.content.description}
                 </p>
                 {

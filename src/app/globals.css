@@ -14,3 +14,30 @@ body {
 .calendly iframe{
   height: 90vh;
 }
+
+.custom-toast-success {
+  background-color: #E6F1ED !important;
+  color: #414651 !important;
+  box-shadow: 0px 2px 6px #0000000D;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 311px;
+  display: flex;
+  padding: 22px 15px;
+  font-weight: 500;
+}
+
+.custom-toast-error {
+  background-color: #fdeaea !important;
+  color: hsl(6, 78%, 57%) !important;
+  box-shadow: 0px 2px 6px #0000000D;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 311px;
+  display: flex;
+  padding: 22px 15px;
+  font-weight: 500;
+}
+.custom-toast-success .Toastify__close-button > svg{
+  fill: #414651 !important;
+}
